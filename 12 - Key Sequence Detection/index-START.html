@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+  const pressed = [];
+  const pattern = 'bhsdk';
+
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-pattern.length-1, pressed.length - pattern.length);
+
+    if(pressed.join('').includes(pattern)){
+      console.log('WOhoo');
+      cornify_add();
+    }
+  })
+
 </script>
 </body>
 </html>
